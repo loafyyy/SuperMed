@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/China_button"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_margin="@dimen/home_button_margin"
+            android:background="@color/pinkAccent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/china" />
+
+        <ImageButton
+            android:id="@+id/France_button"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_margin="@dimen/home_button_margin"
+            android:background="@color/pinkAccent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/france" />
+
+        <ImageButton
+            android:id="@+id/Germany_button"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_margin="@dimen/home_button_margin"
+            android:background="@color/pinkAccent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/germany" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/Italy_button"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_margin="@dimen/home_button_margin"
+            android:background="@color/pinkAccent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/italy" />
+
+        <ImageButton
+            android:id="@+id/Spain_button"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_margin="@dimen/home_button_margin"
+            android:background="@color/pinkAccent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/spain" />
+
+        <ImageButton
+            android:id="@+id/Thailand_button"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_margin="@dimen/home_button_margin"
+            android:background="@color/pinkAccent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/thailand" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/US_button"
+            android:layout_width="@dimen/home_button_size"
+            android:layout_height="@dimen/home_button_size"
+            android:layout_margin="@dimen/home_button_margin"
+            android:background="@color/pinkAccent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/us" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Traveling From"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/traveling_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            tools:text="US" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Traveling To"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/traveling_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            tools:text="France" />
+    </RelativeLayout>
+</LinearLayout>
