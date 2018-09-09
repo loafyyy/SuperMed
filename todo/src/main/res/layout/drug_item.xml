@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/drug_name" />
+        android:layout_toRightOf="@id/drug_name"
+        android:background="@android:color/transparent"/>
 
 </RelativeLayout>

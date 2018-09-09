@@ -139,6 +139,14 @@ public class HomeActivity extends AppCompatActivity {
         travelingTo = findViewById(R.id.traveling_to);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        count = 0;
+        travelingTo.setText("");
+        travelingFrom.setText("");
+    }
+
     private void goToNextPage() {
         String fromCountry = travelingFrom.getText().toString();
         String toCountry = travelingTo.getText().toString();

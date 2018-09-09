@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
         Log.i("from", fromCountry);
         Log.i("to", toCountry);
 
-        fromCountryTV = (TextView) findViewById(R.id.traveling_from);
-        toCountryTV = (TextView) findViewById(R.id.traveling_to);
-        //fromCountryTV.setText(fromCountry);
-        //toCountryTV.setText(toCountry);
+        fromCountryTV = (TextView) findViewById(R.id.from_name);
+        toCountryTV = (TextView) findViewById(R.id.to_name);
+        fromCountryTV.setText(fromCountry);
+        toCountryTV.setText(toCountry);
 
 
         this._client = Stitch.getDefaultAppClient();
@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
     private void makeQuery(String drugToSearch) {
         RemoteMongoCollection<Document> mongoClient = getItemsCollection();
         Document searchQuery = new Document();
-        // TODO update to other brands
-        searchQuery.put("US-brands", drugToSearch);
+
+        searchQuery.put(fromCountry + "-brands", drugToSearch);
         RemoteFindIterable<Document> cursor = mongoClient.find(searchQuery);
 
         cursor.into(new ArrayList<Document>())
@@ -119,36 +119,43 @@ public class MainActivity extends AppCompatActivity {
                                 DrugItem drug = new DrugItem(doc);
 
                                 List<String> brands = null;
-                                List<String> pictures = null;
+                                List<String> pictures = drug.getUSPicture();
                                 if (toCountry.equals("US")) {
                                     brands = drug.getUSBrands();
                                     pictures = drug.getUSPicture();
                                 } else if (toCountry.equals("China")) {
                                     brands = drug.getChinaBrands();
-                                    // pictures = drug.getFrancePicture();
+                                    pictures = drug.getFrancePicture();
                                 } else if (toCountry.equals("Germany")) {
                                     brands = drug.getGermanyBrands();
-                                    // pictures = drug.getFrancePicture();
+                                    pictures = drug.getFrancePicture();
                                 } else if (toCountry.equals("France")) {
                                     brands = drug.getFranceBrands();
                                     pictures = drug.getFrancePicture();
                                 } else if (toCountry.equals("Italy")) {
                                     brands = drug.getItalyBrands();
-                                    // pictures = drug.getFrancePicture();
+                                    pictures = drug.getFrancePicture();
                                 } else if (toCountry.equals("Spain")) {
                                     brands = drug.getSpainBrands();
-                                    // pictures = drug.getFrancePicture();
+                                    pictures = drug.getFrancePicture();
                                 } else if (toCountry.equals("Thailand")) {
                                     brands = drug.getThailandBrands();
-                                    // pictures = drug.getFrancePicture();
+                                    pictures = drug.getFrancePicture();
                                 }
 
                                 List<DrugPreview> drugPreviews = new ArrayList<>();
 
+
                                 for (int i = 0; i < brands.size(); i++) {
                                     String brand = brands.get(i);
-                                    String picture = pictures.get(i);
-                                    DrugPreview drugPreview = new DrugPreview(brand, picture);
+                                    DrugPreview drugPreview;
+                                    if (pictures != null) {
+                                        String picture = pictures.get(i);
+                                        drugPreview = new DrugPreview(brand, picture);
+                                    }
+                                    else {
+                                        drugPreview = new DrugPreview(brand, "");
+                                    }
                                     drugPreviews.add(drugPreview);
                                 }
 

@@ -1,5 +1,7 @@
 package com.mongodb.stitch.sdk.examples.todo;
 
+import android.util.Log;
+
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
@@ -49,6 +51,7 @@ public class DrugItem {
         ThaiIngredientName = document.getString("Thai-ingredient-name");
 
         USPicture = (List<String>) document.get("US-picture");
+
         FrancePicture = (List<String>) document.get("France-picture");
     }
 
